@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { List, ListItem, SearchBar, OrderButton, PokemonImage } from '../styled/StyledComponents';
 import { fetchPokemons } from '../features/FetchAPI';
 
 type Pokemon = {
@@ -47,31 +48,30 @@ const PokemonList = () => {
 
   return (
     <div>
-      <input 
+      <SearchBar 
         type="text" 
         placeholder="Search Pokémon..." 
         value={search}
         onChange={e => setSearch(e.target.value)}
       />
 
-      <button onClick={toggleOrder}>
+      <OrderButton onClick={toggleOrder}>
         Order {order === 'asc' ? 'Descending' : 'Ascending'}
-      </button>
+      </OrderButton>
     
-      <ul className="centered-list">
+      <List>
         {sortedPokemons.map((pokemon, index) => (
           <li key={index}>
-            <div className="listItem">
-              <img 
+            <ListItem>
+              <PokemonImage 
                 src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${getPokemonId(pokemon.url)}.png`} 
                 alt={pokemon.name}
-                className="pokemonImage"
               />
               #{getPokemonId(pokemon.url)} {pokemon.name}
-            </div>
+            </ListItem>
           </li>
         ))}
-      </ul>
+      </List>
 
     </div>
   );

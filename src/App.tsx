@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from "./pokeapi_256.png"
+import logo from "./pokeapi_logo.png"
 import PokemonList from './components/PokemonList';
 import './App.css';
 
