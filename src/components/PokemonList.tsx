@@ -26,7 +26,8 @@ const PokemonList = () => {
   }, []);
 
   const getPokemonId = (url: string): string | null => {
-    const match = url.match(/\/(\d+)\/$/);
+    const idPattern = /\/(\d+)\/$/;
+    const match = url.match(idPattern);
     return match ? match[1] : null;
   };
 
