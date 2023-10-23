@@ -25,6 +25,8 @@ npm install
 npm start
 ```
 
+4. Open http://localhost:3000 to view it in the browser.
+
 ## Exercise 1 - SQL
 
 Solution for exercise 1 is on route `/src/database/db.sql`.
@@ -33,3 +35,4 @@ Solution for exercise 1 is on route `/src/database/db.sql`.
 ## Exercise 2 - React
 
 <p>The front-end part was done with React + TypeScript to ensure a better static typing that helps the compiler make sure the code is stronger and solid.</p>
+<p>It also consumes an API [PokéAPI](https://pokeapi.co/docs/v2) to simulate a Pokédex which is limited to only 20 pokemons, there is a search bar and a button to filter and order all the results (by default it's already ordered by name)</p>
